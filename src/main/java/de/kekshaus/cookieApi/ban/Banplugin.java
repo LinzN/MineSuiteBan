@@ -1,6 +1,5 @@
 package de.kekshaus.cookieApi.ban;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.kekshaus.cookieApi.ban.banCMD.BanCommand;
@@ -10,7 +9,6 @@ import de.kekshaus.cookieApi.ban.muteCMD.MuteCommand;
 import de.kekshaus.cookieApi.ban.muteCMD.TempMuteCommand;
 import de.kekshaus.cookieApi.ban.muteCMD.UnMuteCommand;
 import de.kekshaus.cookieApi.ban.otherCMD.KickCommand;
-import de.kekshaus.cookieApi.bukkit.CookieApiBukkit;
 
 public class Banplugin extends JavaPlugin {
 	private static Banplugin inst;
