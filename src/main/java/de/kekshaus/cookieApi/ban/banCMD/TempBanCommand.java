@@ -9,9 +9,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import de.kekshaus.cookieApi.ban.Banplugin;
+import de.kekshaus.cookieApi.ban.api.BNStreamOutApi;
 import de.kekshaus.cookieApi.ban.utils.TimeParser;
 import de.kekshaus.cookieApi.bukkit.MessageDB;
-import de.kekshaus.cookieApi.bukkit.managerApi.BanApi;
 
 public class TempBanCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
@@ -38,7 +38,7 @@ public class TempBanCommand implements CommandExecutor {
 								String arg = args[i] + " ";
 								reasonarg = reasonarg + arg;
 							}
-							BanApi.tempBan(args[0], reasonarg, sender.getName(), time);
+							BNStreamOutApi.tempBan(args[0], reasonarg, sender.getName(), time);
 						} else {
 							sender.sendMessage("/tempban <Playername> <Time> <Grund>");
 						}

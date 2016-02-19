@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import de.kekshaus.cookieApi.ban.banCMD.BanCommand;
 import de.kekshaus.cookieApi.ban.banCMD.TempBanCommand;
 import de.kekshaus.cookieApi.ban.banCMD.UnBanCommand;
+import de.kekshaus.cookieApi.ban.listener.BukkitSockBanListener;
 import de.kekshaus.cookieApi.ban.muteCMD.MuteCommand;
 import de.kekshaus.cookieApi.ban.muteCMD.TempMuteCommand;
 import de.kekshaus.cookieApi.ban.muteCMD.UnMuteCommand;
@@ -17,6 +18,7 @@ public class Banplugin extends JavaPlugin {
 		inst = this;
 
 		loadCommands();
+		getServer().getPluginManager().registerEvents(new BukkitSockBanListener(), this);
 	}
 
 	public void onDisable() {

@@ -9,8 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import de.kekshaus.cookieApi.ban.Banplugin;
+import de.kekshaus.cookieApi.ban.api.BNStreamOutApi;
 import de.kekshaus.cookieApi.bukkit.MessageDB;
-import de.kekshaus.cookieApi.bukkit.managerApi.BanApi;
 
 public class UnMuteCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
@@ -31,7 +31,7 @@ public class UnMuteCommand implements CommandExecutor {
 								String arg = args[i] + " ";
 								reasonarg = reasonarg + arg;
 							}
-							BanApi.unMute(args[0], reasonarg, sender.getName());
+							BNStreamOutApi.unMute(args[0], reasonarg, sender.getName());
 						} else {
 							sender.sendMessage("/unmute <Playername> <Grund>");
 						}
