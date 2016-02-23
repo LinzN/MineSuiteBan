@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 
 import de.kekshaus.cookieApi.ban.Banplugin;
 import de.kekshaus.cookieApi.ban.api.BNStreamOutApi;
-import de.kekshaus.cookieApi.bukkit.MessageDB;
+import de.kekshaus.cookieApi.bukkit.GlobalMessageDB;
 
 public class MuteCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
@@ -39,7 +39,7 @@ public class MuteCommand implements CommandExecutor {
 				}
 			});
 		} else {
-			sender.sendMessage(MessageDB.NO_PERMISSIONS);
+			sender.sendMessage(GlobalMessageDB.NO_PERMISSIONS);
 		}
 		return false;
 	}
