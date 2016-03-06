@@ -3,7 +3,8 @@ version: ${project.version}
 description: Banplugin
 authors: [Kekshaus]
 main: de.kekshaus.cookieApi.ban.Banplugin
-
+load: POSTWORLD
+depend: [CookieApiBukkit]
 commands:
   ban:
     description: Ban a player
