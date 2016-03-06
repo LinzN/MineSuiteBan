@@ -4,7 +4,7 @@ description: Banplugin
 authors: [Kekshaus]
 main: de.kekshaus.cookieApi.ban.Banplugin
 load: POSTWORLD
-depend: [CookieApiBukkit]
+depend: [cookieApiBukkit]
 commands:
   ban:
     description: Ban a player
