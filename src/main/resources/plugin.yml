@@ -1,5 +1,5 @@
 name: cookieApiBan
-version: ${project.version}
+version: ${project.version}.b${build.number}
 description: Banplugin
 authors: [Kekshaus]
 main: de.kekshaus.cookieApi.ban.Banplugin
