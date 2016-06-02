@@ -1,15 +1,15 @@
-package de.kekshaus.cookieApi.ban;
+package de.nlinz.xeonSuite.ban;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.kekshaus.cookieApi.ban.banCMD.BanCommand;
-import de.kekshaus.cookieApi.ban.banCMD.TempBanCommand;
-import de.kekshaus.cookieApi.ban.banCMD.UnBanCommand;
-import de.kekshaus.cookieApi.ban.listener.BukkitSockBanListener;
-import de.kekshaus.cookieApi.ban.muteCMD.MuteCommand;
-import de.kekshaus.cookieApi.ban.muteCMD.TempMuteCommand;
-import de.kekshaus.cookieApi.ban.muteCMD.UnMuteCommand;
-import de.kekshaus.cookieApi.ban.otherCMD.KickCommand;
+import de.nlinz.xeonSuite.ban.banCMD.BanCommand;
+import de.nlinz.xeonSuite.ban.banCMD.TempBanCommand;
+import de.nlinz.xeonSuite.ban.banCMD.UnBanCommand;
+import de.nlinz.xeonSuite.ban.listener.BukkitSockBanListener;
+import de.nlinz.xeonSuite.ban.muteCMD.MuteCommand;
+import de.nlinz.xeonSuite.ban.muteCMD.TempMuteCommand;
+import de.nlinz.xeonSuite.ban.muteCMD.UnMuteCommand;
+import de.nlinz.xeonSuite.ban.otherCMD.KickCommand;
 
 public class Banplugin extends JavaPlugin {
 	private static Banplugin inst;

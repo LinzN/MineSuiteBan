@@ -1,4 +1,4 @@
-package de.kekshaus.cookieApi.ban.banCMD;
+package de.nlinz.xeonSuite.ban.banCMD;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -8,20 +8,20 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import de.kekshaus.cookieApi.ban.Banplugin;
-import de.kekshaus.cookieApi.ban.api.BNStreamOutApi;
-import de.kekshaus.cookieApi.bukkit.GlobalMessageDB;
+import de.nlinz.xeonSuite.ban.Banplugin;
+import de.nlinz.xeonSuite.ban.api.BNStreamOutApi;
+import de.nlinz.xeonSuite.bukkit.GlobalMessageDB;
 
-public class BanCommand implements CommandExecutor {
+public class UnBanCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
 			new LinkedBlockingQueue<Runnable>());
 
-	public BanCommand(Banplugin instance) {
+	public UnBanCommand(Banplugin instance) {
 
 	}
 
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
-		if (sender.hasPermission("cookieApi.ban.ban")) {
+		if (sender.hasPermission("cookieApi.ban.unban")) {
 			this.executorServiceCommands.submit(new Runnable() {
 				public void run() {
 					if (args.length >= 0)
@@ -31,9 +31,9 @@ public class BanCommand implements CommandExecutor {
 								String arg = args[i] + " ";
 								reasonarg = reasonarg + arg;
 							}
-							BNStreamOutApi.permaBan(args[0], reasonarg, sender.getName());
+							BNStreamOutApi.unBan(args[0], reasonarg, sender.getName());
 						} else {
-							sender.sendMessage("/ban <Playername> <Grund>");
+							sender.sendMessage("/unban <Playername> <Grund>");
 						}
 
 				}

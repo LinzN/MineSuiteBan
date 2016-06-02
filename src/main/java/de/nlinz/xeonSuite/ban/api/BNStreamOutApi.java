@@ -1,4 +1,4 @@
-package de.kekshaus.cookieApi.ban.api;
+package de.nlinz.xeonSuite.ban.api;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;

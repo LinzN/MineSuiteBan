@@ -1,4 +1,4 @@
-package de.kekshaus.cookieApi.ban.listener;
+package de.nlinz.xeonSuite.ban.listener;
 
 import java.io.DataInputStream;
 import java.io.IOException;

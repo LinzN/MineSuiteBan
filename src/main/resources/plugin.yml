@@ -1,10 +1,10 @@
-name: cookieApiBan
+name: XeonSuiteBan
 version: ${project.version}.b${build.number}
 description: Banplugin
 authors: [Kekshaus]
-main: de.kekshaus.cookieApi.ban.Banplugin
+main: de.nlinz.xeonSuite.ban.Banplugin
 load: POSTWORLD
-depend: [cookieApiBukkit]
+depend: [XeonSuiteBukkit]
 commands:
   ban:
     description: Ban a player
