@@ -2,10 +2,11 @@ package de.nlinz.xeonSuite.ban;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import de.nlinz.javaSocket.client.api.XeonSocketClientManager;
 import de.nlinz.xeonSuite.ban.banCMD.BanCommand;
 import de.nlinz.xeonSuite.ban.banCMD.TempBanCommand;
 import de.nlinz.xeonSuite.ban.banCMD.UnBanCommand;
-import de.nlinz.xeonSuite.ban.listener.BukkitSockBanListener;
+import de.nlinz.xeonSuite.ban.listener.XeonBan;
 import de.nlinz.xeonSuite.ban.muteCMD.MuteCommand;
 import de.nlinz.xeonSuite.ban.muteCMD.TempMuteCommand;
 import de.nlinz.xeonSuite.ban.muteCMD.UnMuteCommand;
@@ -14,13 +15,15 @@ import de.nlinz.xeonSuite.ban.otherCMD.KickCommand;
 public class Banplugin extends JavaPlugin {
 	private static Banplugin inst;
 
+	@Override
 	public void onEnable() {
 		inst = this;
 
 		loadCommands();
-		getServer().getPluginManager().registerEvents(new BukkitSockBanListener(), this);
+		XeonSocketClientManager.registerDataListener(new XeonBan());
 	}
 
+	@Override
 	public void onDisable() {
 	}
 

@@ -2,20 +2,28 @@ package de.nlinz.xeonSuite.ban.listener;
 
 import java.io.DataInputStream;
 import java.io.IOException;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 
-import de.keks.socket.bukkit.events.plugin.BukkitSockBanEvent;
-import de.keks.socket.core.ByteStreamConverter;
+import de.nlinz.javaSocket.client.api.XeonSocketClientManager;
+import de.nlinz.javaSocket.client.events.SocketDataEvent;
+import de.nlinz.javaSocket.client.interfaces.IDataListener;
 
-public class BukkitSockBanListener implements Listener {
+public class XeonBan implements IDataListener {
 
-	@EventHandler
-	public void onBukkitSockBanEvent(final BukkitSockBanEvent e) {
+	@Override
+	public String getChannel() {
+		// TODO Auto-generated method stub
+		return channelName;
+	}
 
-		DataInputStream in = ByteStreamConverter.toDataInputStream(e.readBytes());
+	public static String channelName = "xeonBan";
+
+	@Override
+	public void onDataRecieve(SocketDataEvent event) {
+		// TODO Auto-generated method stub
+		DataInputStream in = XeonSocketClientManager.readDataInput(event.getStreamBytes());
 		String task = null;
 		try {
 			task = in.readUTF();

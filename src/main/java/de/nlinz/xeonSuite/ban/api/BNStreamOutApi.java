@@ -4,14 +4,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import de.keks.socket.bukkit.BukkitPlugin;
-import de.keks.socket.core.Channel;
+import de.nlinz.javaSocket.client.api.XeonSocketClientManager;
+import de.nlinz.xeonSuite.ban.listener.XeonBan;
 
 public class BNStreamOutApi {
 
 	public static void permaBan(String player, String reason, String bannedBy) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("PermaBan");
 			out.writeUTF(player);
@@ -21,12 +21,12 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 	public static void permaMute(String player, String reason, String mutedBy) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("PermaMute");
 			out.writeUTF(player);
@@ -36,12 +36,12 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 	public static void tempBan(String player, String reason, String bannedBy, long seconds) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("TempBan");
 			out.writeUTF(player);
@@ -52,12 +52,12 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 	public static void tempMute(String player, String reason, String mutedBy, long seconds) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("TempMute");
 			out.writeUTF(player);
@@ -68,12 +68,12 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 	public static void kick(String player, String reason, String kickedby) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("kick");
 			out.writeUTF(player);
@@ -84,12 +84,12 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 	public static void unBan(String player, String reason, String unBannedby) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("unban");
 			out.writeUTF(player);
@@ -100,12 +100,12 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 	public static void unMute(String player, String reason, String unMutedby) {
-		ByteArrayOutputStream b = new ByteArrayOutputStream();
-		DataOutputStream out = Channel.banChannel(b);
+		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+		DataOutputStream out = XeonSocketClientManager.createChannel(bytes, XeonBan.channelName);
 		try {
 			out.writeUTF("unmute");
 			out.writeUTF(player);
@@ -116,7 +116,7 @@ public class BNStreamOutApi {
 			e.printStackTrace();
 		}
 
-		BukkitPlugin.instance().sendBytesOut(b);
+		XeonSocketClientManager.sendData(bytes);
 	}
 
 }
