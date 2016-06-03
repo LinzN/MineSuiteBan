@@ -25,11 +25,6 @@
         	<artifactId>XeonSuiteBukkit</artifactId>
         	<version>1</version>
         </dependency>
-        <dependency>
-        	<groupId>de.nlinz</groupId>
-        	<artifactId>XeonSocketClient</artifactId>
-        	<version>1.0</version>
-        </dependency>
     </dependencies>
     <build>
         <finalName>${project.name}</finalName>
