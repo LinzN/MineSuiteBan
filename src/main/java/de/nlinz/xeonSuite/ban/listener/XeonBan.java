@@ -33,7 +33,7 @@ public class XeonBan implements IDataListener {
 				Bukkit.getConsoleSender().sendMessage(getMessage);
 				Bukkit.getConsoleSender().sendMessage(reason);
 				for (Player p : Bukkit.getOnlinePlayers()) {
-					if (p.hasPermission("cookieApi.ban.notifyinfo")) {
+					if (p.hasPermission("xeonSuite.ban.notifyinfo")) {
 						p.sendMessage(getMessage);
 						p.sendMessage(reason);
 					}
@@ -44,7 +44,7 @@ public class XeonBan implements IDataListener {
 				Bukkit.getConsoleSender().sendMessage(getMessage);
 
 				for (Player p : Bukkit.getOnlinePlayers()) {
-					if (p.hasPermission("cookieApi.ban.notifyinfo")) {
+					if (p.hasPermission("xeonSuite.ban.notifyinfo")) {
 						p.sendMessage(getMessage);
 					}
 				}

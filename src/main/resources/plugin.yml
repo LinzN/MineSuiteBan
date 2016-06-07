@@ -21,36 +21,36 @@ commands:
   unmute:
     description: Unmute a player
 permissions:
-    cookieApi.ban.team:
+    xeonSuite.ban.team:
         description: Alle Permissions
         children:
-            cookieApi.ban.ban: true
-            cookieApi.ban.tempban: true
-            cookieApi.ban.unban: true
-            cookieApi.ban.kick: true
-            cookieApi.ban.mute: true
-            cookieApi.ban.tempmute: true
-            cookieApi.ban.unmute: true
-            cookieApi.ban.notifyinfo: true
+            xeonSuite.ban.ban: true
+            xeonSuite.ban.tempban: true
+            xeonSuite.ban.unban: true
+            xeonSuite.ban.kick: true
+            xeonSuite.ban.mute: true
+            xeonSuite.ban.tempmute: true
+            xeonSuite.ban.unmute: true
+            xeonSuite.ban.notifyinfo: true
         default: op
-    cookieApi.ban.ban:
+    xeonSuite.ban.ban:
         description: Ban a player permanently
         default: op
-    cookieApi.ban.tempban:
+    xeonSuite.ban.tempban:
         description: Tempban a player
         default: op
-    cookieApi.ban.unban:
+    xeonSuite.ban.unban:
         description: Unban a player
         default: op
-    cookieApi.ban.kick:
+    xeonSuite.ban.kick:
         description: Kick a player
         default: op
-    cookieApi.ban.mute:
+    xeonSuite.ban.mute:
         description: Mute a player permanently
         default: op
-    cookieApi.ban.tempmute:
+    xeonSuite.ban.tempmute:
         description: Tempmute a player
         default: op
-    cookieApi.ban.unmute:
+    xeonSuite.ban.unmute:
         description: Unmute a player
         default: op

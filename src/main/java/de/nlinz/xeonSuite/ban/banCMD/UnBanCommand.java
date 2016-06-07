@@ -22,7 +22,7 @@ public class UnBanCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
-		if (sender.hasPermission("cookieApi.ban.unban")) {
+		if (sender.hasPermission("xeonSuite.ban.unban")) {
 			this.executorServiceCommands.submit(new Runnable() {
 				@Override
 				public void run() {

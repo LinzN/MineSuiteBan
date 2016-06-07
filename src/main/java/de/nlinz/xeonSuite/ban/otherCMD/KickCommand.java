@@ -22,7 +22,7 @@ public class KickCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
-		if (sender.hasPermission("cookieApi.ban.kick")) {
+		if (sender.hasPermission("xeonSuite.ban.kick")) {
 			this.executorServiceCommands.submit(new Runnable() {
 				@Override
 				public void run() {
