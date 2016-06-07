@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 
 import de.nlinz.xeonSuite.ban.Banplugin;
 import de.nlinz.xeonSuite.ban.api.BNStreamOutApi;
-import de.nlinz.xeonSuite.bukkit.GlobalMessageDB;
+import de.nlinz.xeonSuite.bukkit.utils.languages.GlobalLanguage;
 
 public class UnMuteCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
@@ -20,9 +20,11 @@ public class UnMuteCommand implements CommandExecutor {
 
 	}
 
+	@Override
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
 		if (sender.hasPermission("cookieApi.ban.unmute")) {
 			this.executorServiceCommands.submit(new Runnable() {
+				@Override
 				public void run() {
 					if (args.length >= 0)
 						if (args.length >= 2) {
@@ -39,7 +41,7 @@ public class UnMuteCommand implements CommandExecutor {
 				}
 			});
 		} else {
-			sender.sendMessage(GlobalMessageDB.NO_PERMISSIONS);
+			sender.sendMessage(GlobalLanguage.NO_PERMISSIONS);
 		}
 		return false;
 	}

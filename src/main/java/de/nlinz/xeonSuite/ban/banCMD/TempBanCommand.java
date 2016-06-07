@@ -11,7 +11,7 @@ import org.bukkit.command.CommandSender;
 import de.nlinz.xeonSuite.ban.Banplugin;
 import de.nlinz.xeonSuite.ban.api.BNStreamOutApi;
 import de.nlinz.xeonSuite.ban.utils.TimeParser;
-import de.nlinz.xeonSuite.bukkit.GlobalMessageDB;
+import de.nlinz.xeonSuite.bukkit.utils.languages.GlobalLanguage;
 
 public class TempBanCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
@@ -21,9 +21,11 @@ public class TempBanCommand implements CommandExecutor {
 
 	}
 
+	@Override
 	public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
 		if (sender.hasPermission("cookieApi.ban.tempban")) {
 			this.executorServiceCommands.submit(new Runnable() {
+				@Override
 				public void run() {
 					if (args.length >= 0)
 						if (args.length >= 3) {
@@ -46,7 +48,7 @@ public class TempBanCommand implements CommandExecutor {
 				}
 			});
 		} else {
-			sender.sendMessage(GlobalMessageDB.NO_PERMISSIONS);
+			sender.sendMessage(GlobalLanguage.NO_PERMISSIONS);
 		}
 		return false;
 	}
