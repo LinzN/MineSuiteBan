@@ -11,7 +11,7 @@ import org.bukkit.command.CommandSender;
 import de.nlinz.xeonSuite.ban.Banplugin;
 import de.nlinz.xeonSuite.ban.api.BNStreamOutApi;
 import de.nlinz.xeonSuite.ban.utils.TimeParser;
-import de.nlinz.xeonSuite.bukkit.utils.languages.GlobalLanguage;
+import de.nlinz.xeonSuite.bukkit.utils.languages.GeneralLanguage;
 
 public class TempMuteCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
@@ -48,7 +48,7 @@ public class TempMuteCommand implements CommandExecutor {
 				}
 			});
 		} else {
-			sender.sendMessage(GlobalLanguage.NO_PERMISSIONS);
+			sender.sendMessage(GeneralLanguage.NO_PERMISSIONS);
 		}
 		return false;
 	}
