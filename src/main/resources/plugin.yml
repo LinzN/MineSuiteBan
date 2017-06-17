@@ -1,5 +1,5 @@
 name: XeonSuiteBan
-version: ${project.version}.b${build.number}
+version: ${project.version}
 description: Banplugin
 authors: [Kekshaus]
 main: de.nlinz.xeonSuite.ban.Banplugin
