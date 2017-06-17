@@ -1,5 +1,6 @@
 package de.nlinz.xeonSuite.ban;
 
+import org.bstats.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.nlinz.javaSocket.client.api.XeonSocketClientManager;
@@ -21,6 +22,7 @@ public class Banplugin extends JavaPlugin {
 
 		loadCommands();
 		XeonSocketClientManager.registerDataListener(new XeonBan());
+		new Metrics(this);
 	}
 
 	@Override
