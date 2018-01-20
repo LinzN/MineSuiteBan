@@ -1,10 +1,10 @@
-name: XeonSuiteBan
+name: MineSuiteBan
 version: ${project.version}
-description: Banplugin
+description: BanPlugin
 authors: [Kekshaus]
-main: de.nlinz.xeonSuite.ban.Banplugin
+main: de.linzn.mineSuite.ban.BanPlugin
 load: POSTWORLD
-depend: [XeonSuiteBukkit]
+depend: [MineSuiteCore]
 commands:
   ban:
     description: Ban a player
@@ -21,36 +21,36 @@ commands:
   unmute:
     description: Unmute a player
 permissions:
-    xeonSuite.ban.team:
+    mineSuite.ban.team:
         description: Alle Permissions
         children:
-            xeonSuite.ban.ban: true
-            xeonSuite.ban.tempban: true
-            xeonSuite.ban.unban: true
-            xeonSuite.ban.kick: true
-            xeonSuite.ban.mute: true
-            xeonSuite.ban.tempmute: true
-            xeonSuite.ban.unmute: true
-            xeonSuite.ban.notifyinfo: true
+            mineSuite.ban.ban: true
+            mineSuite.ban.tempban: true
+            mineSuite.ban.unban: true
+            mineSuite.ban.kick: true
+            mineSuite.ban.mute: true
+            mineSuite.ban.tempmute: true
+            mineSuite.ban.unmute: true
+            mineSuite.ban.notifyinfo: true
         default: op
-    xeonSuite.ban.ban:
+    mineSuite.ban.ban:
         description: Ban a player permanently
         default: op
-    xeonSuite.ban.tempban:
+    mineSuite.ban.tempban:
         description: Tempban a player
         default: op
-    xeonSuite.ban.unban:
+    mineSuite.ban.unban:
         description: Unban a player
         default: op
-    xeonSuite.ban.kick:
+    mineSuite.ban.kick:
         description: Kick a player
         default: op
-    xeonSuite.ban.mute:
+    mineSuite.ban.mute:
         description: Mute a player permanently
         default: op
-    xeonSuite.ban.tempmute:
+    mineSuite.ban.tempmute:
         description: Tempmute a player
         default: op
-    xeonSuite.ban.unmute:
+    mineSuite.ban.unmute:
         description: Unmute a player
         default: op
