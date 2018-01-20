@@ -33,13 +33,13 @@ public class JClientBanListener implements IncomingDataListener {
             subChannel = in.readUTF();
             if (subChannel.equals("server_ban_notify")) {
                 String getMessage = in.readUTF();
+                System.out.println(getMessage);
                 String reason = in.readUTF();
-                Bukkit.getConsoleSender().sendMessage(getMessage);
-                Bukkit.getConsoleSender().sendMessage(reason);
+                System.out.println(reason);
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     if (p.hasPermission("mineSuite.ban.notifyinfo")) {
                         p.sendMessage(getMessage);
-                        if (reason.equalsIgnoreCase("none")) {
+                        if (!reason.equalsIgnoreCase("none")) {
                             p.sendMessage(reason);
                         }
                     }

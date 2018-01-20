@@ -28,7 +28,7 @@ public class BanPlugin extends JavaPlugin {
     public void onEnable() {
         inst = this;
         loadCommands();
-        MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.registerIncomingDataListener("mineSuiteBungee", new JClientBanListener());
+        MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.registerIncomingDataListener("mineSuiteBan", new JClientBanListener());
     }
 
     @Override
