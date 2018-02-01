@@ -14,7 +14,7 @@ package de.linzn.mineSuite.ban.commands;
 import de.linzn.mineSuite.ban.BanPlugin;
 import de.linzn.mineSuite.ban.socket.JClientBanOutput;
 import de.linzn.mineSuite.ban.utils.TimeParser;
-import de.linzn.mineSuite.core.MineSuiteCorePlugin;
+import de.linzn.mineSuite.core.configurations.YamlFiles.GeneralLanguage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,27 +35,26 @@ public class TempBanCommand implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
         if (sender.hasPermission("mineSuite.ban.tempban")) {
             this.executorServiceCommands.submit(() -> {
-                if (args.length >= 0)
-                    if (args.length >= 3) {
+                if (args.length >= 3) {
 
-                        long time = TimeParser.parseString(args[1]);
-                        if (time == -1) {
-                            sender.sendMessage("Keine gültige Zeitangabe!");
-                            return;
-                        }
-                        String reasonarg = "";
-                        for (int i = 2; i < args.length; i++) {
-                            String arg = args[i] + " ";
-                            reasonarg = reasonarg + arg;
-                        }
-                        JClientBanOutput.tempBan(args[0], reasonarg, sender.getName(), time);
-                    } else {
-                        sender.sendMessage("/tempban <Playername> <Time> <Grund>");
+                    long time = TimeParser.parseString(args[1]);
+                    if (time == -1) {
+                        sender.sendMessage(GeneralLanguage.ban_NO_VALID_TIME);
+                        return;
                     }
+                    String reasonarg = "";
+                    for (int i = 2; i < args.length; i++) {
+                        String arg = args[i] + " ";
+                        reasonarg = reasonarg + arg;
+                    }
+                    JClientBanOutput.tempBan(args[0], reasonarg, sender.getName(), time);
+                } else {
+                    sender.sendMessage(GeneralLanguage.ban_BAN_TEMP_USAGE);
+                }
 
             });
         } else {
-            sender.sendMessage(MineSuiteCorePlugin.getInstance().getMineConfigs().generalLanguage.NO_PERMISSIONS);
+            sender.sendMessage(GeneralLanguage.global_NO_PERMISSIONS);
         }
         return false;
     }

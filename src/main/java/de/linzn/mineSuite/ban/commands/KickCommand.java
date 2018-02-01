@@ -13,7 +13,7 @@ package de.linzn.mineSuite.ban.commands;
 
 import de.linzn.mineSuite.ban.BanPlugin;
 import de.linzn.mineSuite.ban.socket.JClientBanOutput;
-import de.linzn.mineSuite.core.MineSuiteCorePlugin;
+import de.linzn.mineSuite.core.configurations.YamlFiles.GeneralLanguage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -34,21 +34,20 @@ public class KickCommand implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, Command cmd, String label, final String[] args) {
         if (sender.hasPermission("mineSuite.ban.kick")) {
             this.executorServiceCommands.submit(() -> {
-                if (args.length >= 0)
-                    if (args.length >= 2) {
-                        String reasonarg = "";
-                        for (int i = 1; i < args.length; i++) {
-                            String arg = args[i] + " ";
-                            reasonarg = reasonarg + arg;
-                        }
-                        JClientBanOutput.kick(args[0], reasonarg, sender.getName());
-                    } else {
-                        sender.sendMessage("/kick <Playername> <Grund>");
+                if (args.length >= 2) {
+                    String reasonarg = "";
+                    for (int i = 1; i < args.length; i++) {
+                        String arg = args[i] + " ";
+                        reasonarg = reasonarg + arg;
                     }
+                    JClientBanOutput.kick(args[0], reasonarg, sender.getName());
+                } else {
+                    sender.sendMessage(GeneralLanguage.ban_KICK_USAGE);
+                }
 
             });
         } else {
-            sender.sendMessage(MineSuiteCorePlugin.getInstance().getMineConfigs().generalLanguage.NO_PERMISSIONS);
+            sender.sendMessage(GeneralLanguage.global_NO_PERMISSIONS);
         }
         return false;
     }
