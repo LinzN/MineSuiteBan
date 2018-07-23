@@ -5,6 +5,7 @@ authors: [Kekshaus]
 main: de.linzn.mineSuite.ban.BanPlugin
 load: POSTWORLD
 depend: [MineSuiteCore]
+api-version: 1.13
 commands:
   ban:
     description: Ban a player
